@@ -1,0 +1,126 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="panelsalir">
+   <div class="navbar">
+        <div class="navbar-inner sliding">
+        <div class="left">
+            <a href="/panelprincipal/" class="link back"><i class="icon icon-back"></i></a>
+            <span class="ios-only"></span>
+            </a>
+        </div>
+        </div>
+    </div>
+    <div class="page-content">
+         <div class="block">
+                        <div class="row">
+                                <div class="col">
+                                <a href="#" data-popup=".my-popup-parque" class="popup-open">
+                                <p id="ingresrSinUser">Parque</p>
+                                    <button class="icon btnPanelPrincipal" id="btnStyle">
+                                        <img src="img/habitacion.jpg" id="parque" width="150" height="150">
+                                    </button>
+                                </a>
+                                </div>
+                                <div class="col">
+                                <a href="#" data-popup=".my-popup-auto" class="popup-open">
+                                <p id="ingresrSinUser">Auto</p>
+                                    <button class="icon btnPanelPrincipal" id="btnStyle">
+                                        <img src="img/baño.jpg" id="auto" width="150" height="150">
+                                    </button>                            
+                                </a>
+                                </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col">
+                                <a href="#" data-popup=".my-popup-comer" class="popup-open">
+                                <p id="ingresrSinUser">Comer</p>
+                                    <button class="icon btnPanelPrincipal" id="btnStyle">
+                                        <img src="img/living.jpg" id="comer" width="150" height="150">
+                                    </button>
+                                </a>
+                                </div>
+          
+                                <div class="col">
+                                <a href="#" data-popup=".my-popup-comer" class="popup-open">
+                                <p id="ingresrSinUser">Juegos</p>
+                                    <button class="icon btnPanelPrincipal" id="btnStyle">
+                                        <img src="img/cocina.jpg" id="juegos" width="150" height="150">
+                                    </button>
+                                </a>
+                                </div>
+                        </div>   
+        </div>
+                     
+
+                        <!-- And somewhere in DOM -->
+                        <div class="popup my-popup-parque">
+                            <div class="view">
+                                <div class="page">
+                                    <div class="navbar">
+                                        <div class="navbar-bg"></div>
+                                        <div class="navbar-inner">
+                                            <div class="title">Parque</div>
+                                            <div class="right">
+                                                <!-- Link to close popup -->
+                                                <a class="link popup-close">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page-content">
+                                        <div class="col">
+                                            <button class="button" id="btnStylePop">
+                                                <img src="img/dormir.jpg" id="casa" width="150" height="100">
+                                            </button> 
+                                            <button class="button" id="btnStylePop">
+                                                <img src="img/jugarCons.jpg" id="casa" width="150" height="100">
+                                            </button>                                   
+                                            <button class="button" id="btnStylePop">
+                                                <img src="img/jugar.jpg" id="casa" width="150" height="100">
+                                            </button>                                   
+                                  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup my-popup-auto">
+                            <div class="view">
+                                <div class="page">
+                                    <div class="navbar">
+                                        <div class="navbar-bg"></div>
+                                        <div class="navbar-inner">
+                                            <div class="title">Popup</div>
+                                            <div class="right">
+                                                <!-- Link to close popup -->
+                                                <a class="link popup-close">Auto</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page-content">
+                                     AUTO
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup my-popup-comer">
+                            <div class="view">
+                                <div class="page">
+                                    <div class="navbar">
+                                        <div class="navbar-bg"></div>
+                                        <div class="navbar-inner">
+                                            <div class="title">Comer</div>
+                                            <div class="right">
+                                                <!-- Link to close popup -->
+                                                <a class="link popup-close">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page-content">
+                                     COMER
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>

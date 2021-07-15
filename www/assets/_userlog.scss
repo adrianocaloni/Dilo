@@ -1,0 +1,37 @@
+.background__form{
+    background-color: #F1F1F1;
+    border-radius: 1rem;
+    padding-bottom: 4rem;
+}
+
+
+.h1__user--index{
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.h2__text{
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.form__text{
+    font-size: 1.5rem;
+    margin-top: 3rem;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5rem;
+    & button{
+        cursor: pointer;
+    }
+}
+
+.checkbox__log{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
