@@ -22,6 +22,7 @@ var app = new Framework7({
       {path: '/recuperarpass/',url: 'recuperarpass.html',},
       {path: '/acercadilo/',url: 'acercadilo.html',},
       {path: '/crearcuenta/',url: 'crearcuenta.html',},
+      {path: '/buscador/',url: 'buscador.html',},
     ]    
 
   });
@@ -158,6 +159,49 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     })
 
 })
+
+//BUSCADOR
+$$(document).on('page:init', '.page[data-name="buscador"]', function (e) {
+app.routes[5].keepAlive = true;
+var searchbar = app.searchbar.create ({
+  el: '.searchbar'
+})
+$$('#buscar').on('click', function(){
+  var buscando = $$('#buscador').val();
+  var url ="https://api.arasaac.org/api/pictograms/es/search/" + buscando;
+  app.request.json (url, function(encontrados){
+    console.log(encontrados);
+    if (encontrados.length == 0){
+      app.toast.create ({
+        text: "No se encontró pictograma. Modifica la palabra",
+        closeTimeout: 3000,
+        position: 'center'
+      }).open();
+    }
+      for (i =0; i <encontrados.length; i++){
+        id= encontrados[i]._id;
+        urlImagen= "https://static.arasaac.org/pictograms/" + id + "/"+ id +"_500.png"
+    
+        $$('#imagen'+ (i + 1)).attr('src',urlImagen);
+       
+        var picName = encontrados[i].keywords[0].keyword;
+        $$('#picName' +(i + 1)).text(picName);
+        $$('#encontrado'+ (i + 1)).removeClass('oculto').on('click', function(){
+            switch (1){
+              case 1:
+                console.log(urlImagen);       
+                 break
+
+            }
+        })
+
+      }
+  })
+
+})
+
+})
+
 // PANEL PRINCIPAL
   $$(document).on('page:init', '.page[data-name="panelprincipal"]', function (e) {
     console.log("HOLA");
@@ -167,6 +211,10 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
     $$('#btnSalir').on('click',function(){
       app.views.main.router.navigate("/panelsalir/"); 
+    })
+
+    $$('#btnDoctor').on('click',function(){
+      app.views.main.router.navigate("/buscador/"); 
     })
 })
 
