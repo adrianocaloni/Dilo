@@ -17,6 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
+  
     
     <!-- Color theme for statusbar -->
     <!-- <meta name="theme-color" content="#2196f3"> -->
@@ -34,95 +35,91 @@
 
 <body>
     <div id="app">
+        <div class="panel panel-left panel-cover panel-init theme-init" id="panel-nested" data-container-el="#panel">
+            <div class="page">
+              <p>Menú</p><br/>
+              <div class="row">
+                    <i class="col button button-raised panel-close" id="irLogin"><img id="imgMenuSR" src="img/Login.ico"/>Iniciar Sesión</i>
+              </div>
+              <!-- <div class="row">
+                <i class="col button button-raised panel-close" id="irAgendaNR"><img id="imgMenuSR" src="img/agenda.ico"/>Mis Rutinas</i>
+              </div> -->
+               <!-- <i class="col button button-raised panel-close" id="irCasaNR"><img id="imgMenuSR" src="img/casa.ico"/>Mi Actividades</i>
+              <div class="row">
+                <i class="col button button-raised panel-close" id="irCasaNR"><img id="imgMenuSR" src="img/casa.ico"/>Mi Actividades</i>
+              </div>-->
+              <div class="row">
+                <!--<a class="link external" href="https://api.whatsapp.com/send?phone=+5493413223219&text=Hola!%20Dilo!" > </a>-->
+                <i class="col button button-raised panel-close" id="irWhatsApp"><img id="imgMenuSR" src="img/wp.ico"/>Contacto</i>
+              </div>
+            </div>
+          </div>
         <!-- Statusbar overlay -->
         <div class="statusbar"></div>
     
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-       
-            <!-- Top Navbar
+
+              <!--  Top Navbar 
+         
             <div class="navbar">
                 <div class="navbar-bg"></div>
-                <div class="navbar-inner">
-                    <div class="left"><i class="icon icon-back"></i></div>
-                    <div class="title">Page Title</div>
-                    <div class="right"><i class="icon icon-forward"></i></div>
+                <div class="navbar-inner sliding">
+                    <div class="left">
+                        <a class="link back">
+                          <i class="icon icon-back"></i>
+                          <span class="if-not-md">Back</span>
+                        </a>
+                    </div>
                 </div>
             </div>-->
+      
+
     
-            <!-- Toolbar -->
-            <div class="toolbar toolbar-bottom">
+             <!--Toolbar -->
+             <div class="toolbar toolbar-bottom">
                 <div class="toolbar-inner">
-                <!-- Toolbar links -->
-                 <!-- <a href="#" class="link">Link 1</a>-->
+                <!--Toolbar links
+                 <a href="#" class="link">Link 1</a> -->
                 <a href="/acercadilo/" class="link">¿Quienes Somos?</a>
                 </div>
             </div>
         
         <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
-                    <div class="titleIndex">Dilo!</div>
-                <!-- Scrollable page content -->
-                    <div class="list no-hairlines-md">
-                        <ul>
-                            <li class="item-content item-input">Ingresá con tu email</li>
-                                <li class="item-content item-input">
-                                    <div class="item-media">
-                                        <i class="icon demo-list-icon"></i>
-                                    </div>
-                                    <div class="item-inner">
-                                        <div  class="item-title item-label">Email</div>
-                                    <div class="item-input-wrap">
-                                        <input id="inicioEmail" type="email" placeholder="ejemplo@mail.com" />
-                                        <span class="input-clear-button"></span>
-                                    </div>
-                                    </div>
-                            </li>
-                            <li class="item-content item-input">
-                                    <div class="item-media">
-                                        <i class="icon demo-list-icon"></i>
-                                    </div>
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Clave</div>
-                                    <div class="item-input-wrap">
-                                        <input id="inicioPassword" type="password" placeholder="Ingrese su clave" />
-                                        <span class="input-clear-button"></span>
-                                            <div class="block-footer">
-                                                <p id="mensajeAlert" class="alertMsg"></p>
-                                            </div>                         
-                                    </div>
-                                    </div>
-                            </li>
-                            <li>
-                                <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title">Recordar email</div>
-                                        <div class="item-after">
-                                            <label class="toggle toggle-init" id="recordarEmail">
-                                                <input type="checkbox" />
-                                                <span class="toggle-icon"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                            <a class="link" id="olvidePass">
-                                <i class="icon"></i>
-                                <span>No recuerdo mi clave</span>
-                            </a>
-                        <div class="block block-strong">
-                            <p class="row">
-                                <button class="col col button button-raised button-fill btnStyle" id="btnIS">Ingresar</button>
-                                <button class="col button button-raised button-fill btnStyle" id="btnReg">Crear Cuenta</button>
-                                <p id="ingresrSinUser"> Ingresar sin usuario </p>
-                                <button class="icon btnPanelPrincipal" id="btnIngresar"><img src="img/Dilo.png" id="casaIndex" width="120" height="105"></button>  
-                            </p>                     
-                        </div>                
+
+                    <div class="navbar">
+                    <div class="navbar-inner sliding">
+                        <div class="left">
+                            <i class="icon" id="irMenu">
+                                <p><a class="panel-open" href="#" data-panel=".panel-left"><img id="imgLogin" src="img/menu.ico" id="menu"></a></p></i>
                         </div>
                     </div>
-                        <!-- And somewhere in DOM -->
+                    </div>
+                   <!-- <div class="navbar">
+                    <div class="navbar-inner sliding">
+
+                    </div>
+                    </div> -->
+
+                    <div class ="page-content  hide-navbar-on-scroll">
+                        
+                        <div class="block block-strong">
+                            <div class="col">
+                                <button class="icons btnPanelPrincipal" id="btnCasa">
+                                    <img src="img/CasaPanel.ico" id="casa">
+                                </button> <br/><br/>
+                                <button class="icons btnPanelPrincipal" id="btnParque">
+                                    <img src="img/Parque.ico" id="parque">
+                                </button> <br/><br/> 
+                                <button class="icons btnPanelPrincipal" id="btnEscuela">
+                                    <img src="img/Escuela.ico" id="parque">
+                                </button> <br/><br/>                                     
+                                <button class="icons btnPanelPrincipal" id="btnYo">
+                                    <img src="img/persona.ico" id="yo">
+                                </button>                                   
+                            </div>  
+                        </div>
                     </div>
                 </div>
             </div>

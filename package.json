@@ -35,6 +35,7 @@
     "Samsung >= 5"
   ],
   "dependencies": {
+    "bootstrap": "^5.1.1",
     "dom7": "^3.0.0",
     "framework7": "^6.0.6",
     "framework7-icons": "^3.0.1",
@@ -52,6 +53,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-browsersync-gen2": "^1.1.7",
+    "cordova-plugin-camera": "^6.0.0",
     "cordova-plugin-whitelist": "^1.3.5",
     "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.3",
@@ -85,7 +87,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-browsersync-gen2": {}
+      "cordova-plugin-browsersync-gen2": {},
+      "cordova-plugin-camera": {}
     },
     "platforms": [
       "browser"

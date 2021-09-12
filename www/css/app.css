@@ -83,6 +83,125 @@
 * {
 	font-family: 'Poppins', Arial, sans-serif;
 }
+.visible{
+  display: block;
+  visibility: visible;
+}
+.oculto{
+  display: none;
+  visibility: hidden;
+}
+
+/*navbar indexUsuarioRegistrado.html*/
+.title-large-text {
+  background-color: white;
+  text-align: center;
+}
+
+.navbar-inner.sliding {
+  background-color: white;
+}
+
+
+/* crearRutina */
+p#texto-picto {
+  text-align: center;
+}
+
+/* bucador.hmtl */
+button#buscar {
+  width: 20%;
+}
+
+/*agenda2.html*/
+img.link.popover-open {
+  width: 25%;
+} 
+div#hacer1 {
+    margin-right: 40%;
+}
+div#hacer2 {
+  margin-right: 40%;
+}
+div#hacer3 {
+  margin-right: 40%;
+}
+div#hacer4 {
+  margin-right: 40%;
+}
+div#hacer5 {
+  margin-right: 40%;
+}
+p#picejemplo1 {
+  color: black;
+}
+p#picejemplo2 {
+  color: black;
+}
+p#picejemplo3 {
+  color: black;
+}
+p#picejemplo4 {
+  color: black;
+}
+p#picejemplo5 {
+  color: black;
+}
+div#primeraetapa {
+  margin-top: 65%;
+  margin-left: 35%;
+}
+/*-------------------*/
+
+img#mostrarImagneBD1 {
+ width: 80%; 
+}
+img#mostrarImagneBD2 {
+  width: 80%; 
+}
+img#mostrarImagneBD3 {
+  width: 80%; 
+}
+img#mostrarImagneBD4 {
+  width: 80%; 
+}
+img#mostrarImagneBD5 {
+  width: 80%; 
+}
+img#mostrarImagneBD6 {
+  width: 80%; 
+}
+
+img#mostrarImagneBD7 {
+  width: 80%; 
+}
+
+img#mostrarImagneBD8 {
+  width: 80%; 
+}
+
+img#mostrarImagneBD9 {
+  width: 80%; 
+}
+
+img#mostrarImagneBD10 {
+  width: 80%; 
+}
+
+
+#imgLogin{
+  margin-top: 17px;
+  margin-bottom: 2px;
+  box-shadow: 1px 1px 1px 1px #f7f7f8;
+  background-color: #f7f7f8;
+}
+
+
+#imgMenuSR{
+  box-shadow: 1px 1px 1px 1px #ffffff;
+  margin-right: 5%;
+}
+
 
 .alertMsg{
 color: red;

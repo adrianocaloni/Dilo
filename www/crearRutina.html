@@ -1,0 +1,265 @@
+    <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+    <div class="page" data-name="crearRutina">
+
+
+
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+            <div class="left">
+                <a href="/indexUsuarioRegistrado/" class="link back">
+                <i class="icon icon-back"></i>
+                <span class="ios-only">Back</span>
+                </a>
+            </div>
+            </div>
+        </div>
+  
+        
+   <!-- <div class="page" data-name="crearRutina">
+    <div class="navbar">
+        <div class="navbar-bg"></div>
+        <div class="navbar-inner sliding">
+            <div class="left">
+                <a class="button panel-open" href="#" data-panel=".panel-left">
+                    <i class="icon material-icons">menu</i>
+                </a>
+            </div>
+            <div class="title" id="tituloagenda">Crear agenda</div>
+            <div class="right"><a class="button panel-open" href="#" data-panel=".panel-right-1"><i
+                        class="icon material-icons">info</i></a></div>
+        </div>
+    </div>-->
+
+
+    <!--Botón violeta con funciones: guardar - editar - play  -->
+    <div class="fab fab-center-center color-deeppurple" id="primeraetapa">
+        <a href="#">
+            <i class="icon f7-icons md-only">rocket</i>
+            <i class="icon f7-icons if-not-md">plus</i>
+            <i class="icon f7-icons if-not-md">xmark</i>
+            <i class="icon material-icons md-only">close</i>
+        </a>
+        <div class="fab-buttons fab-right-bottom fab-buttons-top">
+            <a class="fab-label-button popup-open" data-popup=".popup-services" href="#" id="save"><i
+                    class="icon material-icons md-only">save</i><span class="fab-label fab-close">Guardar
+                    Agenda</span></a>
+            <a class="fab-label-button" href="#"><i class="icon material-icons md-only"
+                    id="playagenda">play_arrow</i><span class="fab-label">Iniciar</span></a>
+        </div>
+    </div>
+
+    <!--Botón violeta del final: abre la toolbar con opciones -->
+    <div class="toolbar toolbar-bottom fab-morph-target">
+        <div class="toolbar-inner">
+            <!-- Each Toolbar link will close FAB (morph back) on click -->
+            <a class="link" id="volver1" href="#" data-view=".page-content">Volver al inicio</a>
+            <a class="link" id="crearnuevo" href="#" data-view='.page-content'>Crear nueva agenda</a>
+        </div>
+    </div>
+    <div id="botonfinal" class="oculto color-deeppurple fab fab-center-bottom fab-morph" data-morph-to=".toolbar"><a
+            href="#">
+            <i class="icon f7-icons md-only">rocket</i><i class="icon material-icons md-only">close</i></a></div>
+            
+    <!--Inicio del contenido de la página
+
+        <div class="hecho row no-gap">
+
+            <div class="hecho1 card-header align-items-flex-end" id="hecho1"><img src="img/perfilLogin.ico"></div>
+            <div class="hecho1 card-header align-items-flex-end" id="hecho2"><img src="img/perfilLogin.ico"></div>
+            <div class="hecho1 card-header align-items-flex-end" id="hecho3"><img src="img/perfilLogin.ico"></div>
+            <div class="hecho1 card-header align-items-flex-end" id="hecho4"><img src="img/perfilLogin.ico"></div>
+            <div class="hecho1 card-header align-items-flex-end" id="hecho5"><img src="img/perfilLogin.ico"></div>
+
+        </div>-->
+
+        <div class="page-content block block-strong">
+        <div class="haciendo col">  
+            <div class="texto">
+                <p id='texto-picto'>¡EMPECEMOS!</p>
+            </div>
+        </div>
+        <div class="hacer row no-gap">
+            <div id="hacer1" class="hacer1 card-header align-items-center"><img id="img1" src="img/agregar2.png" alt=""
+                    class="pq link popover-open" data-popover=".popover-links">
+                    <p id="picejemplo1" class="picname"></p>
+                </div>
+
+            <div id="hacer2" class="hacer1 card-header align-items-center"><img id="img2" src="img/agregar2.png" alt=""
+                class="pq link popover-open" data-popover=".popover-links">
+                <p id="picejemplo2" class="picname"></p></div>
+
+            <div id="hacer3" class="hacer1 card-header align-items-center"><img id="img3" src="img/agregar2.png" alt=""
+                class="pq link popover-open"  data-popover=".popover-links">
+                <p id="picejemplo3" class="picname"></p></div>
+
+            <div id="hacer4" class="hacer1 card-header align-items-center"><img id="img4" src="img/agregar2.png" alt=""
+                class="pq link popover-open" data-popover=".popover-links">
+                <p id="picejemplo4" class="picname"></p></div>
+
+            <div id="hacer5" class="hacer1 card-header align-items-center"><img id="img5" src="img/agregar2.png" alt=""
+                    class="pq link popover-open" data-popover=".popover-links">
+                    <p id="picejemplo5" class="picname"></p></div>
+        </div>
+
+
+
+        <div class="popover popover-links">
+            <div class="popover-inner">
+                <div class="list">
+                    <ul>
+                        <li><a class="list-button item-link" href="#">Importar desde galería </a></li>
+                        <li id="arasaac"><a class="list-button item-link popover-close" href="/buscador/">Buscar en
+                                ARASAAC</a></li>
+                        <li><a class="list-button item-link" href="#" id="subirFoto">Tomar una fotografía</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Popup para guardar los detalles de la agenda creada-->
+        <div class="popup popup-services fondito">
+            <div class="block">
+                <div class="row no-gap">
+                    <a class="list-button popup-close col-50" id="guardarDatos" data-view=".page-content">Guardar</a>
+                    <p><a class="link popup-close col-50" href="#">Cerrar</a></p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-input-wrap">
+                                    <input type="text" name="nuevaagenda" id="nombreagenda"
+                                        placeholder="Nombre de la agenda" value="" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                   <!-- <div class="list accordion-list">
+                        <ul>
+                            <li class="accordion-item">
+                                <a href="" class="item-link item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title" id="seleccolor">
+                                            Seleccione un color
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="accordion-item-content">
+                                    <a href="#" class="menu-dropdown-link menu-close teal" id="verde">Verde</a>
+                                    <a href="#" class="menu-dropdown-link menu-close teal" id="azul">Azul</a>
+                                    <a href="#" class="menu-dropdown-link menu-close teal" id="violeta">Violeta</a>
+                                    <a href="#" class="menu-dropdown-link menu-close teal" id="rojo">Rojo</a>
+                                    <a href="#" class="menu-dropdown-link menu-close teal" id="amarillo">Amarillo</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>-->
+
+                    <div class="card card-header align-items-center cardmenu" id="preview">
+                        <p class="cardmenu" id="nuevonomb">Vista previa</p>
+                        <div class="card-content card-content-padding">
+                            <a href="#" class="link right"><i
+                                    class="icon material-icons cardmenu">play_circle_filled</i></a><a href="#"
+                                class="link left"><i class="icon material-icons cardmenu">edit</i></a>
+                        </div>
+                    </div>
+                    <!--Modificar los nombres de los pictogramas-->
+                    <div class="list accordion-list">
+                        <ul>
+                            <li class="accordion-item">
+                                <a href="" class="item-link item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title" id="">
+                                            Modificar texto de pictograma
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="accordion-item-content teal">
+                                    <div class="menu-dropdown-link menu-close">
+                                        <div class="col-20" id="ejemplo1">
+                                            <img src="" class="encontrado" />
+                                        </div>
+                                        <div class="col-60 ">
+                                            <p id="picejemplo1" class="picname"></p>
+                                        </div>
+                                        <div class="col-20">
+                                            <a href="#" class="link left open-prompt">
+                                                <i class="icon material-icons cardmenu"
+                                                    id="editarnombrecito" posLapiz="1">edit</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item-content teal">
+                                    <div class="menu-dropdown-link menu-close">
+                                        <div class="col-20" id="ejemplo2">
+                                            <img src="" class="encontrado" />
+                                        </div>
+                                        <div class="col-60 teal">
+                                            <p id="picejemplo2" class="picname"></p>
+                                        </div>
+                                        <div class="col-20">
+                                            <a href="#" class="link left">
+                                                <i class="icon material-icons cardmenu open-prompt"
+                                                    id="editarnombrecito" posLapiz="2">edit</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item-content teal">
+                                    <div class="menu-dropdown-link menu-close">
+                                        <div class="col-20" id="ejemplo3">
+                                            <img src="" class="encontrado" />
+                                        </div>
+                                        <div class="col-60">
+                                            <p id="picejemplo3" class="picname"></p>
+                                        </div>
+                                        <div class="col-20">
+                                            <a href="#" class="link left">
+                                                <i class="icon material-icons cardmenu open-prompt"
+                                                    id="editarnombrecito" posLapiz="3">edit</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item-content teal">
+                                    <div class="menu-dropdown-link menu-close">
+                                        <div class="col-20" id="ejemplo4">
+                                            <img src="" class="encontrado" />
+                                        </div>
+                                        <div class="col-60">
+                                            <p id="picejemplo4" class="picname"></p>
+                                        </div>
+                                        <div class="col-20">
+                                            <a href="#" class="link left">
+                                                <i class="icon material-icons cardmenu open-prompt"
+                                                    id="editarnombrecito" posLapiz="4">edit</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item-content teal">
+                                    <div class="menu-dropdown-link menu-close">
+                                        <div class="col-20" id="ejemplo5">
+                                            <img src="" class="encontrado" />
+                                        </div>
+                                        <div class="col-60">
+                                            <p id="picejemplo5" class="picname"></p>
+                                        </div>
+                                        <div class="col-20">
+                                            <a href="#" class="link left">
+                                                <i class="icon material-icons cardmenu open-prompt"
+                                                    id="editarnombrecito" posLapiz="4">edit</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
