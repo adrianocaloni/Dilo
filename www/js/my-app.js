@@ -4,6 +4,7 @@ var $$ = Dom7;
 
 var app = new Framework7({
     // App root element
+ 
     root: '#app',
     // App Name
     name: 'My App',
@@ -20,6 +21,7 @@ var app = new Framework7({
       {path: '/iniciarsesion/',url: 'iniciarsesion.html',},
       {path: '/panelcasa/',url: 'panelcasa.html',},
       {path: '/panelsalir/',url: 'panelsalir.html',},
+      {path: '/panelEscuela/',url: 'panelEscuela.html',}, 
       {path: '/recuperarpass/',url: 'recuperarpass.html',},
       {path: '/acercadilo/',url: 'acercadilo.html',},
       {path: '/crearcuenta/',url: 'crearcuenta.html',},
@@ -41,6 +43,7 @@ emailUsuario="";
 contador="";
 
 
+
 var mainView = app.views.create('.view-main');
 
 // Handle Cordova Device Ready Event
@@ -50,7 +53,7 @@ $$(document).on('deviceready', function() {
 
 // Option 1. Using one 'page:init' handler for all pages
 $$(document).on('page:init', function (e) {
-    // Do something here when page loaded and initialized
+
     console.log(e);
 })
 
@@ -64,6 +67,10 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
   $$('#btnParque').on('click',function(){
     app.views.main.router.navigate("/panelsalir/"); 
+  })
+
+  $$('#btnEscuela').on('click',function(){
+    app.views.main.router.navigate("/panelEscuela/"); 
   })
 
   $$('#btnDoctor').on('click',function(){
@@ -323,6 +330,8 @@ $$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
 
 })
 
+
+
 //------------------------------PANEL USUARIO REGISTRADO-----------------------------------//
 $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', function (e) {
  
@@ -332,12 +341,12 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
     app.views.main.router.navigate("/panelcasa/"); 
   })
 
-  $$('#btnParqueE').on('click',function(){
-    app.views.main.router.navigate("/panelsalir/"); 
+  $$('#btnEscuelaA').on('click',function(){
+    app.views.main.router.navigate("/panelEscuela/"); 
   })
 
-  $$('#btnEscuelaA').on('click',function(){
-    app.views.main.router.navigate("/buscador/"); 
+  $$('#btnParqueE').on('click',function(){
+    app.views.main.router.navigate("/panelsalir/"); 
   })
  
  })
@@ -625,12 +634,34 @@ $$('#buscar').on('click', function(){
 
 })
 
+//------------------------------PANEL ESCUELA-----------------------------------//
+$$(document).on('page:init', '.page[data-name="panelEscuela"]', function (e) {
+
+    //ESTOY EN MANUALIDADES 
+    let botonManualidades = document.querySelector(".reproductorManualidades")
+    let audioEtiquetaManualidades = document.querySelector("audio")
+    
+    botonManualidades.addEventListener("click", () => {
+      audioEtiquetaManualidades.setAttribute("src", "sonido/sala taller.mp3")
+      audioEtiquetaManualidades.play()
+ 
+ })
+
+     // ESTOY EN LA SALA DE INFORMATICA
+     let botonInformatica = document.querySelector(".reproductorInformatica")
+     let audioEtiquetaInformatica = document.querySelector("audio")
+     
+     botonInformatica.addEventListener("click", () => {
+       audioEtiquetaInformatica.setAttribute("src", "sonido/informática.mp3")
+       audioEtiquetaInformatica.play()
+     })
+})
 
 
 //PANEL DE LA CASA
   $$(document).on('page:init', '.page[data-name="panelcasa"]', function (e) {
   
-    //QUIERO IR A LA HABITACIÓN
+    //QUIERO IR A LA HABITACION
     let boton = document.querySelector(".reproductorHabitacion")
     let audioEtiqueta = document.querySelector("audio")
     
@@ -639,6 +670,7 @@ $$('#buscar').on('click', function(){
       audioEtiqueta.play()
       console.log(`Reproduciendo: ${audioEtiqueta.src}`)
     })
+
   
   
     //QUIERO DORMIR

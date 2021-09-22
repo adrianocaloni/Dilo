@@ -188,6 +188,12 @@ img#mostrarImagneBD10 {
   width: 80%; 
 }
 
+.demo-icon {
+  background: #EE350F;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
 
 #imgLogin{
   margin-top: 17px;
