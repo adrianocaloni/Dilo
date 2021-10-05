@@ -22,6 +22,7 @@ var app = new Framework7({
       {path: '/panelcasa/',url: 'panelcasa.html',},
       {path: '/panelsalir/',url: 'panelsalir.html',},
       {path: '/panelEscuela/',url: 'panelEscuela.html',}, 
+      {path: '/panelYo/',url: 'panelYo.html',}, 
       {path: '/recuperarpass/',url: 'recuperarpass.html',},
       {path: '/acercadilo/',url: 'acercadilo.html',},
       {path: '/crearcuenta/',url: 'crearcuenta.html',},
@@ -40,7 +41,7 @@ nombreLoginAct="";
 apellidLoginActo="";
 localidadLoginAct="";
 emailUsuario="";
-contador="";
+
 
 
 
@@ -73,9 +74,10 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     app.views.main.router.navigate("/panelEscuela/"); 
   })
 
-  $$('#btnDoctor').on('click',function(){
-    app.views.main.router.navigate("/buscador/"); 
+  $$('#btnYo').on('click',function(){
+    app.views.main.router.navigate("/panelYo/"); 
   })
+
 
   $$('#irLogin').on('click', function(){
     app.views.main.router.navigate("/iniciarsesion/"); 
@@ -348,6 +350,11 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
   $$('#btnParqueE').on('click',function(){
     app.views.main.router.navigate("/panelsalir/"); 
   })
+  
+  $$('#btnYoO').on('click',function(){
+    app.views.main.router.navigate("/panelYo/"); 
+  })
+ 
  
  })
 
@@ -458,7 +465,6 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
         
         })
         $$('#guardarDatos').on('click',function(){  
-          contador= contador +1;
 
           nombreRutina = $$('#nombreagenda').val();
           imagen1 = $$('#img1').attr('src');
@@ -472,7 +478,6 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
 
           var db = firebase.firestore ();
                 var data = { 
-                  rutinaNume:contador,
                   nombreRutina:nombreRutina,
                   imagen1:imagen1,
                   imagen2:imagen2,
@@ -497,8 +502,11 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
   })
 
 
-//-------------------------------TRAE DATOS DE LA BASE DE DATOS-------------------------//
+//-------------------------------TRAER DATOS DE LA BASE DE DATOS-------------------------//
   $$(document).on('page:init', '.page[data-name="misrutinas"]', function (e) {
+//////////////////////////////////////////////////////////VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRR
+
+
 
     console.log(emailUsuario);
   var db = firebase.firestore ();
@@ -508,34 +516,18 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
   .then(function(querySnapshot){
     querySnapshot.forEach(function(doc){
       console.log("data: "+ doc.data().imagen1);
-      console.log(doc.data().rutinaNume);
-      //switch(doc.data().rutinaNume){
-     // case 1:
-        $$('#nombreRutinaBD1').html(doc.data().nombreRutina);
-        $$('#mostrarImagneBD1').attr('src',doc.data().imagen1);
-        $$('#mostrarImagneBD2').attr('src',doc.data().imagen2);
-        $$('#mostrarImagneBD3').attr('src',doc.data().imagen3);
-        $$('#mostrarImagneBD4').attr('src',doc.data().imagen4);
-        $$('#mostrarImagneBD5').attr('src',doc.data().imagen5);
-       // break
-     // case 2:
-       // $$('#nombreRutinaBD2').html(doc.data().nombreRutina);
-        //$$('#mostrarImagneBD6').attr('src',doc.data().imagen1);
-       // $$('#mostrarImagneBD7').attr('src',doc.data().imagen2);
-       // $$('#mostrarImagneBD8').attr('src',doc.data().imagen3);
-       // $$('#mostrarImagneBD9').attr('src',doc.data().imagen4);
-       // $$('#mostrarImagneBD10').attr('src',doc.data().imagen5);
-       // break
-     // case 3:
-         // $$('#nombreRutinaBD3').html(doc.data().nombreRutina);
-         // $$('#mostrarImagneBD11').attr('src',doc.data().imagen1);
-         // $$('#mostrarImagneBD12').attr('src',doc.data().imagen2);
-         // $$('#mostrarImagneBD13').attr('src',doc.data().imagen3);
-         // $$('#mostrarImagneBD14').attr('src',doc.data().imagen4);
-         // $$('#mostrarImagneBD15').attr('src',doc.data().imagen5);
-        //break
 
-      //}
+      for(i=1; doc.data().a.length >= i ; i++){
+        console.log(doc.data().nombreRutina);
+        console.log(i);
+        $$('#nombreRutinaBD1'+i).html(doc.data().nombreRutina);
+        $$('#mostrarImagneBD'+i+'1').attr('src',doc.data().imagen1);
+        $$('#mostrarImagneBD'+i+'2').attr('src',doc.data().imagen2);
+        $$('#mostrarImagneBD'+i+'3').attr('src',doc.data().imagen3);
+        $$('#mostrarImagneBD'+i+'4').attr('src',doc.data().imagen4);
+        $$('#mostrarImagneBD'+i+'5').attr('src',doc.data().imagen5);
+
+      }
     });
   })
   .catch(function(){
@@ -644,6 +636,7 @@ $$(document).on('page:init', '.page[data-name="panelEscuela"]', function (e) {
     botonManualidades.addEventListener("click", () => {
       audioEtiquetaManualidades.setAttribute("src", "sonido/sala taller.mp3")
       audioEtiquetaManualidades.play()
+      console.log(`Reproduciendo: ${audioEtiquetaManualidades.src}`)
  
  })
 
@@ -654,6 +647,8 @@ $$(document).on('page:init', '.page[data-name="panelEscuela"]', function (e) {
      botonInformatica.addEventListener("click", () => {
        audioEtiquetaInformatica.setAttribute("src", "sonido/informática.mp3")
        audioEtiquetaInformatica.play()
+       console.log(`Reproduciendo: ${audioEtiquetaInformatica.src}`)
+ 
      })
 })
 
@@ -683,6 +678,12 @@ $$(document).on('page:init', '.page[data-name="panelEscuela"]', function (e) {
       console.log(`Reproduciendo: ${audioEtiquetaD.src}`)
     })
    
+})
+
+//PANEL YO
+$$(document).on('page:init', '.page[data-name="panelYo"]', function (e) {
+  
+
 })
 
 //OLVIDE CONTRASEÑA

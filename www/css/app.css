@@ -91,6 +91,61 @@
   display: none;
   visibility: hidden;
 }
+/*INDEX*/
+#textoIndex{
+  text-align: center;
+  color: #ffffff;
+  font-size: 45px;
+}
+.imgIndex{
+  box-shadow: 10px 8px 2.5px 2px black;
+}
+.titleIndex{
+  font-size: 45px;
+  color: #4dc249;
+  margin-left: 25%;
+  font-style:italic;
+}
+
+/*PANEL YOO*/
+#textoImagenes {
+  font-size: 16.1px;
+  text-align: center;
+  color: white;
+  margin-bottom: 5px;
+  font-style:italic;
+}
+
+.imgYo{
+  margin-bottom: 32px;
+}
+.imgYoo{
+  box-shadow: 10px 8px 2.5px 2px black;
+}
+.segmented.segmented-strong {
+  background-color: rgb(67 255 86);
+}
+
+.subnavbar-inner {
+  background-color: #4dc249;
+}
+.navbar-inner {
+  background-color: #4dc249;
+}
+.titleYo{
+  color: #ffffff;
+  font-size: 30px;
+}
+/*---------------------------*/
+
+
+/*PANEL ESCUELA*/
+.imgEscuela{
+  box-shadow: 10px 8px 2.5px 2px black;
+}
+/*---------------------------*/
+
+
 
 /*navbar indexUsuarioRegistrado.html*/
 .title-large-text {
@@ -99,7 +154,7 @@
 }
 
 .navbar-inner.sliding {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 
@@ -223,16 +278,24 @@ color: red;
 img{
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
-  box-shadow: 6px 7px 5px 5px #252525;
+  box-shadow: 0px 0px 8px 5px  #000000;
 }
+
 #btnStylePop{
   padding: 50px;
 
 }
 .btnPanelPrincipal{
-  background-color: white;
+  background-color: #4dc249;
   border-style: none;
 }
+.page-content.hide-navbar-on-scroll {
+  background-color: #4dc249;
+}
+.block.block-strong {
+  background-color: #4dc249;
+}
+
 .btnPop{
   background-color: white;
   border-style: none;
