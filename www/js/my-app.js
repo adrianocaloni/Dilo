@@ -37,6 +37,7 @@ var app = new Framework7({
 
   //VARIABLES GLOBALES
 clickEn=0;
+clickEnRutina=0;
 nombreLoginAct="";
 apellidLoginActo="";
 localidadLoginAct="";
@@ -361,7 +362,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
   //////////////////////////////////////////AGENDA////////////////////////////////////
   $$(document).on('page:init', '.page[data-name="crearRutina"]', function (e) {
    
-
+  
       //-----------------------buscar en ARASAAC----------------------//
         $$('#hacer1').on('click', function() {
           clickEn = 1;
@@ -462,23 +463,22 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
                       console.log('Failed because: ' + message);
                   }
                 })
-        
         })
+        
         $$('#guardarDatos').on('click',function(){  
-
+       
           nombreRutina = $$('#nombreagenda').val();
+          tiempoRutinaID = clickEnRutina;
           imagen1 = $$('#img1').attr('src');
           imagen2 = $$('#img2').attr('src');
           imagen3 = $$('#img3').attr('src');
           imagen4 = $$('#img4').attr('src');
           imagen5 = $$('#img5').attr('src');
 
-          console.log ("AGENDA2 AGENDA2 AGENDA2 AGENDA2");
-          console.log(imagen1);
-
           var db = firebase.firestore ();
                 var data = { 
                   nombreRutina:nombreRutina,
+                  tiempoRutinaID :clickEnRutina,
                   imagen1:imagen1,
                   imagen2:imagen2,
                   imagen3:imagen3,
@@ -496,44 +496,142 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
                 });
        
         })
-
-
-
-  })
+  
+})
 
 
 //-------------------------------TRAER DATOS DE LA BASE DE DATOS-------------------------//
   $$(document).on('page:init', '.page[data-name="misrutinas"]', function (e) {
-//////////////////////////////////////////////////////////VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRR
-
-
-
     console.log(emailUsuario);
-  var db = firebase.firestore ();
-  var rutinasRef = db.collection("rutina").where("Usuario", "==", emailUsuario);
-  rutinasRef.get ()
+    var db = firebase.firestore ();
+    var rutinasRef = db.collection("rutina").where("Usuario", "==", emailUsuario);
+    rutinasRef.get ()
+  
+    .then(function(querySnapshot){
+      querySnapshot.forEach(function(doc){
+        console.log("data: "+ doc.data().imagen1);
 
-  .then(function(querySnapshot){
-    querySnapshot.forEach(function(doc){
-      console.log("data: "+ doc.data().imagen1);
+        for (i = 1; i <= doc.data().tiempoRutinaID; i++){
 
-      for(i=1; doc.data().a.length >= i ; i++){
-        console.log(doc.data().nombreRutina);
-        console.log(i);
-        $$('#nombreRutinaBD1'+i).html(doc.data().nombreRutina);
-        $$('#mostrarImagneBD'+i+'1').attr('src',doc.data().imagen1);
-        $$('#mostrarImagneBD'+i+'2').attr('src',doc.data().imagen2);
-        $$('#mostrarImagneBD'+i+'3').attr('src',doc.data().imagen3);
-        $$('#mostrarImagneBD'+i+'4').attr('src',doc.data().imagen4);
-        $$('#mostrarImagneBD'+i+'5').attr('src',doc.data().imagen5);
+          if (doc.data().tiempoRutinaID === 1){
+            $$('#imagenesManiana').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD11').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD12').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD13').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD14').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD15').attr('src',doc.data().imagen5);
+            $$('#crearRutinaManiana').removeClass('visible').addClass('oculto');
+            $$('#modificar'+1).removeClass('oculto').addClass('visible');
+  
+           } else if (doc.data().tiempoRutinaID === 2) {
+            $$('#imagenesMediaManiana').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD16').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD17').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD18').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD19').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD20').attr('src',doc.data().imagen5);
+            $$('#crearRutinaMeidaManiana').removeClass('visible').addClass('oculto');
+            $$('#modificar'+2).removeClass('oculto').addClass('visible');
+  
+           } else if (doc.data().tiempoRutinaID === 3) {
+            $$('#imagenesMedioDia').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD21').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD22').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD23').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD24').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD25').attr('src',doc.data().imagen5);
+            $$('#crearRutinaMedioDia').removeClass('visible').addClass('oculto');
+            $$('#modificar'+3).removeClass('oculto').addClass('visible');
 
-      }
+          } else if (doc.data().tiempoRutinaID === 4) {
+            $$('#imagenesMediaTarde').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD26').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD27').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD28').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD29').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD30').attr('src',doc.data().imagen5);
+            $$('#crearRutinaMediaTarde').removeClass('visible').addClass('oculto');
+            $$('#modificar'+4).removeClass('oculto').addClass('visible');
+
+          }else if (doc.data().tiempoRutinaID === 5) {
+            $$('#imagenesTarde').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD31').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD32').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD33').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD34').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD35').attr('src',doc.data().imagen5);
+            $$('#crearRutinaTarde').removeClass('visible').addClass('oculto');
+            $$('#modificar'+5).removeClass('oculto').addClass('visible');
+
+          }else if (doc.data().tiempoRutinaID === 6) {
+            $$('#imagenesTardecita').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD36').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD37').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD38').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD39').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD40').attr('src',doc.data().imagen5);
+            $$('#crearRutinaTardecita').removeClass('visible').addClass('oculto');
+            $$('#modificar'+6).removeClass('oculto').addClass('visible');
+
+          }else if (doc.data().tiempoRutinaID === 7) {
+            $$('#imagenesNoche').removeClass('oculto').addClass('visible');
+            $$('#mostrarImagneBD41').attr('src',doc.data().imagen1);
+            $$('#mostrarImagneBD42').attr('src',doc.data().imagen2);
+            $$('#mostrarImagneBD43').attr('src',doc.data().imagen3);
+            $$('#mostrarImagneBD44').attr('src',doc.data().imagen4);
+            $$('#mostrarImagneBD45').attr('src',doc.data().imagen5);
+            $$('#crearRutinaNoche').removeClass('visible').addClass('oculto');
+            $$('#modificar'+7).removeClass('oculto').addClass('visible');
+          }
+          
+        }
+        
+      });
+    })
+    .catch(function(){
+      console.log ("Error : ", error);
     });
-  })
-  .catch(function(){
-    console.log ("Error : ", error);
-  });
 
+    $$('#crearRutinaManiana').on('click', function(){ 
+      clickEnRutina =1 ;
+      console.log("Rutina de MAÑANA =", clickEnRutina);
+      mainView.router.navigate('/crearRutina/')
+          })
+
+
+    $$('#crearRutinaMeidaManiana').on('click', function(){ 
+      clickEnRutina =2 ;
+      console.log("Rutina de MEDIA MAÑANA =", clickEnRutina);
+      mainView.router.navigate('/crearRutina/');
+          })
+    
+    $$('#crearRutinaMedioDia').on('click', function(){ 
+      clickEnRutina =3 ;
+      mainView.router.navigate('/crearRutina/');
+          })
+
+
+      $$('#crearRutinaMediaTarde').on('click', function(){ 
+      clickEnRutina =4 ;
+      mainView.router.navigate('/crearRutina/');
+          })
+
+
+    $$('#crearRutinaTarde').on('click', function(){ 
+      clickEnRutina =5 ;
+      mainView.router.navigate('/crearRutina/');
+          })
+
+    $$('#crearRutinaTardecita').on('click', function(){ 
+      clickEnRutina =6 ;
+      mainView.router.navigate('/crearRutina/');
+          })
+
+
+    $$('#crearRutinaNoche').on('click', function(){ 
+      clickEnRutina =7 ;
+      mainView.router.navigate('/crearRutina/');
+          })
 })
  
 
@@ -594,6 +692,7 @@ $$('#buscar').on('click', function(){
                   $$('#picejemplo'+clickEn).text(texto);       
                   mainView.router.navigate('/crearRutina/');
                   break
+                  
                 case 4:
                   foto = this.children[0].src;
                   console.log(foto);

@@ -139,6 +139,33 @@
 /*---------------------------*/
 
 
+/*MIS RUTINAS*/
+.row.no-gap {
+  margin-bottom: 50px;
+}
+
+.crearRutina {
+  background-color: white;
+  color: green;
+  font-size: 18px;
+  /* border-bottom-style: double; */
+  box-shadow: 3px 8px 2.5px 2px black;
+}
+
+/*PANEL CASA*/
+.btnPanelCasa{
+  background-color: white;
+  border: none;
+}
+
+/*PANEL Salir*/
+.btnPanelSalir{
+  background-color: white;
+  border: none;
+}
+
+
+
 /*PANEL ESCUELA*/
 .imgEscuela{
   box-shadow: 10px 8px 2.5px 2px black;
@@ -207,41 +234,6 @@ div#primeraetapa {
   margin-left: 35%;
 }
 /*-------------------*/
-
-img#mostrarImagneBD1 {
- width: 80%; 
-}
-img#mostrarImagneBD2 {
-  width: 80%; 
-}
-img#mostrarImagneBD3 {
-  width: 80%; 
-}
-img#mostrarImagneBD4 {
-  width: 80%; 
-}
-img#mostrarImagneBD5 {
-  width: 80%; 
-}
-img#mostrarImagneBD6 {
-  width: 80%; 
-}
-
-img#mostrarImagneBD7 {
-  width: 80%; 
-}
-
-img#mostrarImagneBD8 {
-  width: 80%; 
-}
-
-img#mostrarImagneBD9 {
-  width: 80%; 
-}
-
-img#mostrarImagneBD10 {
-  width: 80%; 
-}
 
 .demo-icon {
   background: #EE350F;
