@@ -179,7 +179,13 @@
 }
 /*---------------------------*/
 
-
+/*INDEX*/
+i#irLogin {
+  padding: 10%;
+  background-color: white;
+  font-size: 29px;
+  color:#4dc249;
+}
 
 /*navbar indexUsuarioRegistrado.html*/
 .title-large-text {
