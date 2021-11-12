@@ -91,6 +91,14 @@
   display: none;
   visibility: hidden;
 }
+
+.navbar-inner.legales{
+  background-color: white;
+}
+
+.navbar-inner.sliding {
+  background-color: #ff000087;
+}
 /*INDEX*/
 #textoIndex{
   text-align: center;
@@ -116,6 +124,9 @@
   font-style:italic;
 }
 
+.navbar-inner.sliding.bienvenida {
+  background-color: white;
+}
 .imgYo{
   margin-bottom: 32px;
 }
@@ -138,6 +149,18 @@
 }
 /*---------------------------*/
 
+
+
+/*CONTACTO*/
+.btWhatsapp{
+background-color: white;
+}
+.correo.correoText{
+  text-align: center;
+  font-size: 25px;
+}
+
+/*---------------------------*/
 
 /*MIS RUTINAS*/
 .row.no-gap {
@@ -194,7 +217,7 @@ i#irLogin {
 }
 
 .navbar-inner.sliding {
-  background-color: #ffffff;
+  background-color: #4dc249;
 }
 
 
@@ -208,11 +231,8 @@ button#buscar {
   width: 20%;
 }
 
-/*agenda2.html*/
-img.link.popover-open {
-  width: 25%;
-} 
-div#hacer1 {
+
+div#hacer {
     margin-right: 40%;
 }
 div#hacer2 {
@@ -247,7 +267,26 @@ div#primeraetapa {
   margin-left: 35%;
 }
 /*-------------------*/
+/*crearRutina-*/
 
+#img1{
+  width: 41.5%;
+} 
+
+#img2{
+  width: 75%;
+}
+#img3{
+  width: 75%;
+}
+#img4{
+  width: 75%;
+}
+#img5{
+  width: 75%;
+}
+
+/*-------------------*/
 .demo-icon {
   background: #EE350F;
   color: #fff;
@@ -280,10 +319,21 @@ color: red;
   width: 100%;
   border-radius: 5px;
 }
+
+/*BUSCADOR DE ARASAAC*/
 img{
   background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  box-shadow: 0px 0px 8px 5px  #000000;
+  border-radius: 5px;
+
+}
+
+.encontrado{
+  width: 150px; height: 150px;
+}
+.picname {
+  margin-left: 20px;
+  font-size: 25px;
+  margin-top: 0px;
 }
 
 #btnStylePop{
@@ -304,12 +354,4 @@ img{
 .btnPop{
   background-color: white;
   border-style: none;
-}
-
-.encontrado{
-  width: 50px; height: 50px;
-}
-.picname{
-  margin-left:20px;
-  
 }

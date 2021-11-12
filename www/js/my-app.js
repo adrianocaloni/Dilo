@@ -30,6 +30,7 @@ var app = new Framework7({
       {path: '/indexUsuarioRegistrado/',url: 'indexUsuarioRegistrado.html',},
       {path: '/misrutinas/',url: 'misrutinas.html',},
       {path: '/panelUsuarioRegistrado/',url: 'panelUsuarioRegistrado.html',},
+      {path: '/contacto/',url: 'contacto.html',},
       {path: '/crearRutina/',url: 'crearRutina.html', keepAlive:true,},
     ]    
 
@@ -82,6 +83,10 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
   $$('#irLogin').on('click', function(){
     app.views.main.router.navigate("/iniciarsesion/"); 
+  })
+
+  $$('#irWhatsApp').on('click',function(){
+    app.views.main.router.navigate("/contacto/"); 
   })
 
 })
@@ -361,8 +366,10 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
 
   //////////////////////////////////////////AGENDA////////////////////////////////////
   $$(document).on('page:init', '.page[data-name="crearRutina"]', function (e) {
-   
-  
+
+    $$('#volver').on('click', function() {
+    mainView.router.navigate('/misrutinas/');
+  })
       //-----------------------buscar en ARASAAC----------------------//
         $$('#hacer1').on('click', function() {
           clickEn = 1;
@@ -494,7 +501,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
                 .catch (function(error) {
                 console.log(error);
                 });
-       
+                mainView.router.navigate('/misrutinas/');
         })
   
 })
@@ -502,6 +509,11 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
 
 //-------------------------------TRAER DATOS DE LA BASE DE DATOS-------------------------//
   $$(document).on('page:init', '.page[data-name="misrutinas"]', function (e) {
+    $$('#volverIndex').on('click', function(){
+
+      mainView.router.navigate('/indexUsuarioRegistrado/');
+    })
+
     console.log(emailUsuario);
     var db = firebase.firestore ();
     var rutinasRef = db.collection("rutina").where("Usuario", "==", emailUsuario);
@@ -551,7 +563,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
             $$('#modificar'+3).removeClass('oculto').addClass('visible');
 
           } else if (doc.data().tiempoRutinaID === 4) {
-
+            $$('#tituloDeMediaTarde').html(doc.data().nombreRutina);
             $$('#mostrarImagenBD26').attr('src',doc.data().imagen1);
             $$('#mostrarImagenBD27').attr('src',doc.data().imagen2);
             $$('#mostrarImagenBD28').attr('src',doc.data().imagen3);
@@ -562,7 +574,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
             $$('#modificar'+4).removeClass('oculto').addClass('visible');
 
           }else if (doc.data().tiempoRutinaID === 5) {
-
+            $$('#tituloDeTarde').html(doc.data().nombreRutina);
             $$('#mostrarImagenBD31').attr('src',doc.data().imagen1);
             $$('#mostrarImagenBD32').attr('src',doc.data().imagen2);
             $$('#mostrarImagenBD33').attr('src',doc.data().imagen3);
@@ -573,7 +585,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
             $$('#modificar'+5).removeClass('oculto').addClass('visible');
 
           }else if (doc.data().tiempoRutinaID === 6) {
-
+            $$('#tituloDeTardecita').html(doc.data().nombreRutina);
             $$('#mostrarImagenBD36').attr('src',doc.data().imagen1);
             $$('#mostrarImagenBD37').attr('src',doc.data().imagen2);
             $$('#mostrarImagenBD38').attr('src',doc.data().imagen3);
@@ -584,7 +596,7 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
             $$('#modificar'+6).removeClass('oculto').addClass('visible');
 
           }else if (doc.data().tiempoRutinaID === 7) {
-
+            $$('#tituloDeNoce').html(doc.data().nombreRutina);
             $$('#mostrarImagenBD41').attr('src',doc.data().imagen1);
             $$('#mostrarImagenBD42').attr('src',doc.data().imagen2);
             $$('#mostrarImagenBD43').attr('src',doc.data().imagen3);
@@ -606,6 +618,11 @@ $$(document).on('page:init', '.page[data-name="panelUsuarioRegistrado"]', functi
       clickEnRutina =1 ;
       console.log("Rutina de MAÑANA =", clickEnRutina);
       mainView.router.navigate('/crearRutina/')
+      $$('#img1').attr('src')="img/agregar2.png";
+      $$('#img2').attr('src')="img/agregar2.png";
+      $$('#img3').attr('src')="img/agregar2.png";
+      $$('#img4').attr('src')="img/agregar2.png";
+      $$('#img5').attr('src')="img/agregar2.png";
           })
 
 
@@ -792,6 +809,14 @@ $$(document).on('page:init', '.page[data-name="panelEscuela"]', function (e) {
 //PANEL YO
 $$(document).on('page:init', '.page[data-name="panelYo"]', function (e) {
   
+  console.log("Estoy en el Panel YO");
+
+})
+
+//CONTACTO
+$$(document).on('page:init', '.page[data-name="contacto"]', function (e) {
+  
+  console.log("Estoy en el Panel CONTACTO");
 
 })
 
